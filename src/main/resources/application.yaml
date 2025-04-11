@@ -1,6 +1,10 @@
 spring:
   application:
     name:heima-ai
+  servlet:
+    multipart:
+      max-file-size: 104857600
+      max-request-size: 104857600
   ai:
     ollama:
       base-url: http://localhost:11434
@@ -13,6 +17,10 @@ spring:
         options:
           model: qwen-max-latest
           temperature: 0.8 # 模型温度，值越大，输出结果越随机
+      embedding:
+        options:
+          model: text-embedding-v3 #向量模型名称
+          dimensions: 1024 #向量维度
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/itheima?useSSL=false&serverTimezone=UTC
