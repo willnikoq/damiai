@@ -1,0 +1,37 @@
+{
+  "1744369488911" : [ {
+    "messageType" : "USER",
+    "text" : "你好",
+    "metadata" : {
+      "messageType" : "USER"
+    }
+  }, {
+    "messageType" : "ASSISTANT",
+    "text" : "你好！很高兴见到你。有什么我可以帮助你的吗？",
+    "metadata" : {
+      "role" : "ASSISTANT",
+      "messageType" : "ASSISTANT",
+      "finishReason" : "STOP",
+      "refusal" : "",
+      "index" : 0,
+      "id" : "chatcmpl-3c36c075-eda9-9e2d-91b5-b7d927689636"
+    }
+  }, {
+    "messageType" : "USER",
+    "text" : "这是什么",
+    "metadata" : {
+      "messageType" : "USER"
+    }
+  }, {
+    "messageType" : "ASSISTANT",
+    "text" : "嗨，小黑在这里！看起来这是一幅漫画风格的插画，描绘了一个惊讶或害怕的女孩。她的表情非常夸张，眼睛睁得大大的，嘴巴张开，似乎在尖叫。她的眼睛上还有两条线，可能表示她在眨眼或者有其他特殊的效果。背景中有一些模糊的文字，可能是对话框或其他信息。整体来看，这幅图传达了一种紧张或惊恐的情绪。如果你有任何关于这幅图的问题，或者其他任何事情，请随时告诉我！",
+    "metadata" : {
+      "role" : "ASSISTANT",
+      "messageType" : "ASSISTANT",
+      "finishReason" : "STOP",
+      "refusal" : "",
+      "index" : 0,
+      "id" : "chatcmpl-c3d84f33-4f2e-98e9-9a40-5e85c61d0d08"
+    }
+  } ]
+}
