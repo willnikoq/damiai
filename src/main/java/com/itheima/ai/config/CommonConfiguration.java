@@ -13,6 +13,7 @@ import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.chat.observation.ChatModelObservationConvention;
+import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.ai.model.SimpleApiKey;
 import org.springframework.ai.model.tool.ToolCallingManager;
 import org.springframework.ai.ollama.OllamaChatModel;
@@ -48,16 +49,14 @@ public class CommonConfiguration {
         return  new InMemoryChatMemory();
     }
     @Bean
-        public ChatClient chatClient(OllamaChatModel model,ChatMemory chatMemory){
-            return  ChatClient
-                    .builder(model)
-                    .defaultSystem("你是一个温柔的好ai，你叫大米")
-                    .defaultAdvisors(
-                            new SimpleLoggerAdvisor(),
-                            new MessageChatMemoryAdvisor(chatMemory)
+    public ChatClient chatClient(OpenAiChatModel model, ChatMemory chatMemory) {
+        return ChatClient.builder(model) // 创建ChatClient工厂实例
+                .defaultOptions(ChatOptions.builder().model("qwen-omni-turbo").build())
+                .defaultSystem("您是一家名为“黑马程序员”的职业教育公司的客户聊天助手，你的名字叫小黑。请以友好、乐于助人和愉快的方式解答用户的各种问题。")
+                .defaultAdvisors(new SimpleLoggerAdvisor()) // 添加默认的Advisor,记录日志
+                .defaultAdvisors(new MessageChatMemoryAdvisor(chatMemory))
+                .build(); // 构建ChatClient实例
 
-                    )
-                    .build();
     }
 
     @Bean
